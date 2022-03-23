@@ -2,8 +2,9 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <v-btn v-on:click="test1()">test1</v-btn>
-    <v-btn v-on:click="test2()">test2</v-btn>
+    <v-btn v-on:click="test1()">test1</v-btn><br />
+    <v-btn v-on:click="test2()">test2</v-btn><br />
+    <v-btn v-on:click="test3()">test2</v-btn><br />
   </div>
 </template>
 
@@ -25,6 +26,11 @@ export default {
     },
     test2() {
       axios.get("http://localhost/test").then(function (res) {
+        console.log(res);
+      });
+    },
+    test3() {
+      axios.get("http://localhost:8080/test").then(function (res) {
         console.log(res);
       });
     },
