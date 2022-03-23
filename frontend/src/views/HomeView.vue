@@ -9,6 +9,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import axios from "axios";
 
 export default {
   name: "HomeView",
@@ -17,7 +18,9 @@ export default {
   },
   methods: {
     test() {
-      console.log("@@@@@@@@@@@@@@@@@");
+      axios.get("http://localhost:8794/test").then(function (res) {
+        console.log(res);
+      });
     },
   },
 };
