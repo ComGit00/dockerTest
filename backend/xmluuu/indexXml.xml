@@ -1,0 +1,8 @@
+<mapper namespace="testMapper">  
+  <select id="testBasic">
+    SELECT
+      *
+    FROM
+      board
+  </select>
+</mapper>

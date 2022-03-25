@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const indexService = require( '../service/index_service' );
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,7 +9,8 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/test', function(req, res, next) {
-  console.log("test")
+  let test = indexService.test();
+  console.log("test :: ", test)
   res.render('index', { title: 'Express' });
 });
 
