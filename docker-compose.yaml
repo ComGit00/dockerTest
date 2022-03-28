@@ -3,33 +3,33 @@ version: '3.0'
 
 services:
   ws:
-   # 도커 컨테이너 이름
-   container_name: wstest
-   # 생성시 사용할 이미지 이름(--name)
-   image: nginx
-   # 연결되는 포트번호(-p)
-   ports:
-    - "80:80"
-   # 볼륨정보 추가
-   volumes:
-    - /home/asd/Desktop/proj/dockerTest/frontend/dist:/usr/share/nginx/html
+    # 도커 컨테이너 이름
+    container_name: wstest
+    # 생성시 사용할 이미지 이름(--name)
+    image: nginx
+    # 연결되는 포트번호(-p)
+    ports:
+      - "80:80"
+    # 볼륨정보 추가
+    volumes:
+      - /home/asd/Desktop/proj/dockerTest/frontend/dist:/usr/share/nginx/html
   bak:
-   container_name: baktest
-   image: node
-   ports:
-    - "1234:1234"
-   volumes:
-    - /home/asd/Desktop/proj/dockerTest/backend:/backend
+    container_name: baktest
+    image: node
+    ports:
+      - "1234:1234"
+    volumes:
+      - /home/asd/Desktop/proj/dockerTest/backend:/backend
   db:
-   container_name: dbtest
-   image: mariadb
-   ports:
-    - "3306:3306"
-   volumes:
-    - /home/asd/Desktop/mariadb:/var/lib/mysql
-   # 환경변수(-e)
-   environment:
-    # 마리아DB root 패스워드
-    - MARIADB_ROOT_PASSWORD={루트 패스워드}
-    # DB 시작시 test라는 데이터베이스 추가
-    - MARIADB_DATABASE=test
+    container_name: dbtest
+    image: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - /home/asd/Desktop/mariadb:/var/lib/mysql
+    # 환경변수(-e)
+    environment:
+      # 마리아DB root 패스워드
+      - MARIADB_ROOT_PASSWORD={루트 패스워드}
+      # DB 시작시 test라는 데이터베이스 추가
+      - MARIADB_DATABASE=test
