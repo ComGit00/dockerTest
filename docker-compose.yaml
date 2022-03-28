@@ -1,4 +1,4 @@
-# 버전 명시
+# 컴포즈 파일 버전 명시
 version: '3.0'
 
 services:
@@ -13,6 +13,11 @@ services:
     # 볼륨정보 추가
     volumes:
       - /home/asd/Desktop/proj/dockerTest/frontend/dist:/usr/share/nginx/html
+    # 터미널과 비슷한 환경을 조성해준다.(-t)
+    # tty: true
+    # 데이터나 명령어를 입력할 수 있는 흐름을 만들어 준다(-i : interactive)
+    stdin_open: true
+
   bak:
     container_name: baktest
     image: node
@@ -20,6 +25,8 @@ services:
       - "1234:1234"
     volumes:
       - /home/asd/Desktop/proj/dockerTest/backend:/backend
+    stdin_open: true
+
   db:
     container_name: dbtest
     image: mariadb
@@ -33,3 +40,4 @@ services:
       - MARIADB_ROOT_PASSWORD={루트 패스워드}
       # DB 시작시 test라는 데이터베이스 추가
       - MARIADB_DATABASE=test
+    stdin_open: true
