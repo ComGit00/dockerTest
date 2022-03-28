@@ -2,8 +2,9 @@
 version: '3.0'
 
 services:
-  # 도커 컨테이너 이름
   ws:
+    # 도커 컨테이너 이름
+    container_name: wstest
     # 생성시 사용할 이미지 이름(--name)
     image: nginx
     # 연결되는 포트번호(-p)
@@ -13,12 +14,14 @@ services:
     volumes:
       - /home/asd/Desktop/proj/dockerTest/frontend/dist:/usr/share/nginx/html
   bak:
+    container_name: baktest
     image: node
     ports:
       - "8080:8080"
     volumes:
       - /home/asd/Desktop/proj/dockerTest/backend:/backend
   db:
+    container_name: dbtest
     image: mariadb
     ports:
       - "3306:3306"
