@@ -13,7 +13,6 @@ services:
     # 볼륨정보 추가
     volumes:
       - /home/asd/Desktop/proj/dockerTest/frontend/dist:/usr/share/nginx/html
-      - /home/asd/Desktop/proj/dockerTest/nginx:/etc/nginx
     # 터미널과 비슷한 환경을 조성해준다.(-t)
     # tty: true
     # 데이터나 명령어를 입력할 수 있는 흐름을 만들어 준다(-i : interactive)
