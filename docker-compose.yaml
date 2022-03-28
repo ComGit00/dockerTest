@@ -17,7 +17,7 @@ services:
     container_name: baktest
     image: node
     ports:
-      - "8080:8080"
+      - "8794:8794"
     volumes:
       - /home/asd/Desktop/proj/dockerTest/backend:/backend
   db:
