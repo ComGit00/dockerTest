@@ -26,6 +26,9 @@ services:
     volumes:
       - /home/asd/Desktop/proj/dockerTest/backend:/backend
     stdin_open: true
+    build:
+      context: ./backend
+      dockerfile: backend.dockerfile
 
   db:
     container_name: dbtest
